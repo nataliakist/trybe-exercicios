@@ -8,7 +8,7 @@ Conteúdos abordados:
 7. Deployment
 8. Introdução a TypeScript
 9. Programação Orientada a Objetos (POO) e SOLID
-Projeto - TFC - Trybe Futebol Clube
+10. Projeto - TFC - Trybe Futebol Clube
 11. Introdução ao MongoDB
 12. MongoDB com Node.js e POO
 13. Projeto - App de Delivery
