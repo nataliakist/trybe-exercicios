@@ -1,0 +1,65 @@
+  178  mkdir unix_tests
+  179  cd unix_tests/
+  180  touch trybe.txt
+  181  ls
+  182  cp trybe.txt trybe_backup.txt
+  183  ls
+  184  mv trybe.txt trybe2.txt
+  185  ls
+  186  mkdir backup
+  187  ls
+  188  mv trybe_backup.txt backup/ 
+  189  ls
+  190  mkdir backup2
+  191  ls
+  192  cd backup
+  193  ls
+  194  mv trybe_backup.txt ../backup2
+  195  ls
+  196  cd ..
+  197  rmdir backup
+  198  ls
+  200  mv backup2 backup
+  203  pwd
+  204  ls -a
+  205  rm -rf backup
+  206  ls
+  207  clear
+nat@nat-Aspire-A515-52G:~/Área de Trabalho/Trybe/Fundamentos/Seção_01/Dia_01$ cat > skills.txt
+Internet
+Unix
+Bash
+HTML
+CSS
+JavaScript
+React
+SQL
+nat@nat-Aspire-A515-52G:~/Área de Trabalho/Trybe/Fundamentos/Seção_01/Dia_01$ cat skills.txt
+Internet
+Unix
+Bash
+HTML
+CSS
+JavaScript
+React
+SQL
+nat@nat-Aspire-A515-52G:~/Área de Trabalho/Trybe/Fundamentos/Seção_01/Dia_01$ ls
+ Exercicio_01  'Resumo dos comandos.webp'   skills.txt
+nat@nat-Aspire-A515-52G:~/Área de Trabalho/Trybe/Fundamentos/Seção_01/Dia_01$ head -5 skills.txt
+Internet
+Unix
+Bash
+HTML
+CSS
+nat@nat-Aspire-A515-52G:~/Área de Trabalho/Trybe/Fundamentos/Seção_01/Dia_01$ tail -4 skills.txt 
+CSS
+JavaScript
+React
+SQL
+nat@nat-Aspire-A515-52G:~/Área de Trabalho/Trybe/Fundamentos/Seção_01/Dia_01$ cd ..
+nat@nat-Aspire-A515-52G:~/Área de Trabalho/Trybe/Fundamentos/Seção_01$ ls
+Dia_01  Dia_02  skills.txt
+nat@nat-Aspire-A515-52G:~/Área de Trabalho/Trybe/Fundamentos/Seção_01$ rm *.txt
+nat@nat-Aspire-A515-52G:~/Área de Trabalho/Trybe/Fundamentos/Seção_01$ ls
+Dia_01  Dia_02
+

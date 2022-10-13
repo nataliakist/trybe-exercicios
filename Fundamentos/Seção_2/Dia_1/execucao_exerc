@@ -1,0 +1,257 @@
+nat@nat-Aspire-A515-52G:~/exercicio_01$ touch README.md
+nat@nat-Aspire-A515-52G:~/exercicio_01$ ls
+README.md
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git status
+No ramo main
+
+No commits yet
+
+Arquivos não monitorados:
+  (utilize "git add <arquivo>..." para incluir o que será submetido)
+        README.md
+
+nada adicionado ao envio mas arquivos não registrados estão presentes (use "git add" to registrar)
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git add .
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git sta
+stage    stash    status   
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git status
+No ramo main
+
+No commits yet
+
+Mudanças a serem submetidas:
+  (utilize "git rm --cached <arquivo>..." para não apresentar)
+        new file:   README.md
+
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git commit -m "Criando README"
+[main (root-commit) 090477f] Criando README
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 README.md
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git checkout -b altera-readme
+Switched to a new branch 'altera-readme'
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git branch
+* altera-readme
+  main
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git status
+No ramo altera-readme
+nothing to commit, working tree clean
+nat@nat-Aspire-A515-52G:~/exercicio_01$ echo "Adicionando uma linha" > README.md
+nat@nat-Aspire-A515-52G:~/exercicio_01$ cat README.md
+Adicionando uma linha
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git checkout main
+M       README.md
+Switched to branch 'main'
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git status
+No ramo main
+Changes not staged for commit:
+  (utilize "git add <arquivo>..." para atualizar o que será submetido)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+nenhuma modificação adicionada à submissão (utilize "git add" e/ou "git commit -a")
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git merge altera-readme
+Already up to date.
+nat@nat-Aspire-A515-52G:~/exercicio_01$ ls
+README.md
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git status
+No ramo main
+Changes not staged for commit:
+  (utilize "git add <arquivo>..." para atualizar o que será submetido)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+nenhuma modificação adicionada à submissão (utilize "git add" e/ou "git commit -a")
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git add .
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git status
+No ramo main
+Mudanças a serem submetidas:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git merge altera-readme
+Already up to date.
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git branch
+  altera-readme
+* main
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git status
+No ramo main
+Mudanças a serem submetidas:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git commit README.md 
+Aborting commit due to empty commit message.
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git merge altera-readme
+Already up to date.
+nat@nat-Aspire-A515-52G:~/exercicio_01$ ls
+README.md
+nat@nat-Aspire-A515-52G:~/exercicio_01$ cat README.md
+Adicionando uma linha
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git log
+commit 090477f32626a92ceac5f4cfae52cec66900c23a (HEAD -> main, altera-readme)
+Author: Tita <natalialkist@hotmail.com>
+Date:   Mon Oct 10 18:29:45 2022 -0300
+
+    Criando README
+nat@nat-Aspire-A515-52G:~/exercicio_01$ echo 'criando uma linha' > README.md
+nat@nat-Aspire-A515-52G:~/exercicio_01$ ls README.md
+README.md
+nat@nat-Aspire-A515-52G:~/exercicio_01$ cat README.md
+criando uma linha
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git checkout altera-readme
+M       README.md
+Switched to branch 'altera-readme'
+nat@nat-Aspire-A515-52G:~/exercicio_01$ echo 'adicionando outra linha' >> README.md
+nat@nat-Aspire-A515-52G:~/exercicio_01$ cat README.md 
+criando uma linha
+adicionando outra linha
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git checkout main
+M       README.md
+Switched to branch 'main'
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git merge altera-readme
+Already up to date.
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git status
+No ramo main
+Mudanças a serem submetidas:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+Changes not staged for commit:
+  (utilize "git add <arquivo>..." para atualizar o que será submetido)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git add .
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git status
+No ramo main
+Mudanças a serem submetidas:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git merge altera-readme
+Already up to date.
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git commit -m "Alteração do readme"
+[main e6b9a72] Alteração do readme
+ 1 file changed, 2 insertions(+)
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git status
+No ramo main
+nothing to commit, working tree clean
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git merge altera-readme
+Already up to date.
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git status
+No ramo main
+nothing to commit, working tree clean
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git log
+commit e6b9a727d5e297dfed3d65fe7fb8a4c5310e9a0d (HEAD -> main)
+Author: Tita <natalialkist@hotmail.com>
+Date:   Mon Oct 10 18:39:50 2022 -0300
+
+    Alteração do readme
+
+commit 090477f32626a92ceac5f4cfae52cec66900c23a (altera-readme)
+Author: Tita <natalialkist@hotmail.com>
+Date:   Mon Oct 10 18:29:45 2022 -0300
+
+    Criando README
+nat@nat-Aspire-A515-52G:~/exercicio_01$ cat README.md 
+criando uma linha
+adicionando outra linha
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git checkout -b atualiza-readme
+Switched to a new branch 'atualiza-readme'
+nat@nat-Aspire-A515-52G:~/exercicio_01$ touch infos.txt
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git status
+No ramo atualiza-readme
+Arquivos não monitorados:
+  (utilize "git add <arquivo>..." para incluir o que será submetido)
+        infos.txt
+
+nada adicionado ao envio mas arquivos não registrados estão presentes (use "git add" to registrar)
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git add .
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git status
+No ramo atualiza-readme
+Mudanças a serem submetidas:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   infos.txt
+
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git commit -m "Atualizando readme"
+[atualiza-readme 28f8b2a] Atualizando readme
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 infos.txt
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git status
+No ramo atualiza-readme
+nothing to commit, working tree clean
+nat@nat-Aspire-A515-52G:~/exercicio_01$ echo "Natália Lauschner Kist" > infos.txt
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git status
+No ramo atualiza-readme
+Changes not staged for commit:
+  (utilize "git add <arquivo>..." para atualizar o que será submetido)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   infos.txt
+
+nenhuma modificação adicionada à submissão (utilize "git add" e/ou "git commit -a")
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git add .
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git status
+No ramo atualiza-readme
+Mudanças a serem submetidas:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   infos.txt
+
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git commit -m "Atualiza infos"
+[atualiza-readme 2d13b2b] Atualiza infos
+ 1 file changed, 1 insertion(+)
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git status
+No ramo atualiza-readme
+nothing to commit, working tree clean
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git checkout -b adiciona-infos
+Switched to a new branch 'adiciona-infos'
+nat@nat-Aspire-A515-52G:~/exercicio_01$ ls
+infos.txt  README.md
+nat@nat-Aspire-A515-52G:~/exercicio_01$ cat > README.md 
+O primeiro passo é ter uma pasta versionada e criar um estrutura inicial e fazemos isso utilizando o comando git init. 
+ segundo passo é criar uma branch nova com o comando git checkout nome-da-branch ou git checkout -b nome-da-branch^Z
+[1]+  Parado                  cat > README.md
+nat@nat-Aspire-A515-52G:~/exercicio_01$ cat > README.md 
+ primeiro passo é ter uma pasta versionada e criar um estrutura inicial e fazemos iss^Z                              
+[2]+  Parado                  cat > README.md
+nat@nat-Aspire-A515-52G:~/exercicio_01$ cat > README.md 
+O primeiro passo é ter uma pasta versionada e criar um estrutura inicial e fazemos isso utilizando o comando git init. 
+O segundo passo é criar uma branch nova com o comando git checkout nome-da-branch ou git checkout -b nome-da-branch
+Depois de aplicadas e validadas as alterações da branch, execute o git add . e o comitt, e então volte para a branch main e realize a merge
+nat@nat-Aspire-A515-52G:~/exercicio_01$ cat README.md 
+O primeiro passo é ter uma pasta versionada e criar um estrutura inicial e fazemos isso utilizando o comando git init. 
+O segundo passo é criar uma branch nova com o comando git checkout nome-da-branch ou git checkout -b nome-da-branch
+Depois de aplicadas e validadas as alterações da branch, execute o git tt, e então volte para a branch main e realize a merge
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git add .
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git status
+No ramo adiciona-infos
+Mudanças a serem submetidas:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git commit -m "Preenchimento README"
+[adiciona-infos bd800cb] Preenchimento README
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git status
+No ramo adiciona-infos
+nothing to commit, working tree clean
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git checkout atualiza-readme
+Switched to branch 'atualiza-readme'
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git branch
+  adiciona-infos
+  altera-readme
+* atualiza-readme
+  main
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git merge adiciona-infos
+Updating 2d13b2b..bd800cb
+Fast-forward
+ README.md | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+nat@nat-Aspire-A515-52G:~/exercicio_01$ git status
+No ramo atualiza-readme
+nothing to commit, working tree clean
+nat@nat-Aspire-A515-52G:~/exercicio_01$ ls
+infos.txt  README.md
+nat@nat-Aspire-A515-52G:~/exercicio_01$ cat README.md 
+O primeiro passo é ter uma pasta versionada e criar um estrutura inicial e fazemos isso utilizando o comando git init. 
+O segundo passo é criar uma branch nova com o comando git checkout nome-da-branch ou git checkout -b nome-da-branch
+Depois de aplicadas e validadas as alterações da branch, execute o git tt, e então volte para a branch main e realize a merge
