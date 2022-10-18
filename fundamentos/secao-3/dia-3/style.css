@@ -31,6 +31,32 @@ li em {
   color: blue;
 }
 
-li:has(Java){
+.pink-bg {
   background-color: pink;
+  width: fit-content;
+}
+
+.aliados li a[href*="stackoverflow"]:hover {
+  color: orangered;
+}
+
+.aliados li a[href*="w3schools"]:hover {
+  color: green;
+}
+
+.aliados li a[href*="mozilla"]:hover {
+  color: black;
+}
+
+.aliados li a[href*="devdocs"]:hover {
+  color: darkgoldenrod;
+}
+
+.aliados li a[href*="trybe"]:hover {
+  color: greenyellow;
+}
+
+.aliados li:hover {
+  font-weight: bold;
+  background-color: white;
 }
