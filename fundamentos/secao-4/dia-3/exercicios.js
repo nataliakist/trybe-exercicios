@@ -95,7 +95,6 @@
 // for (let i=0; i<n; i++) {
 //     asteriscos += "*"
 // }
-
 // for (let i=0; i<n; i++) {
 //     console.log(asteriscos)
 // }
@@ -109,20 +108,19 @@
 //     console.log(asteriscos)
 // }
 
-asterisco = ''
-n = 5;
-lista = []
+// Agora inverta o lado do triângulo.
 
-for (let i=0; i<n-1; i++){
-    lista.push(' ')
+let n = 5
+let asteriscos = ''
+
+for (let i = 0; i < n; i += 1){
+    for (let z = 0; z < n; z += 1){
+        if (z >= n-1) {
+            asteriscos += '*'
+        }
+    }
+    console.log(asteriscos)
 }
 
-lista.push('*')
-
-for(let z=0; z<n; z++){
-    console.log(...lista)
-    lista.push('*')
-    lista.shift()
-}
 
 
