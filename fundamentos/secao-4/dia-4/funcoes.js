@@ -8,7 +8,6 @@
 //         return false
 //     }
 // }
-
 // console.log(palindromo('arara'))
 
 // function verificaPalindrome(word) {
@@ -20,7 +19,6 @@
 //       };    
 //     }
 //   }
-
 //   console.log(verificaPalindrome('natalia'))
 
 // Crie uma função que receba um array de inteiros e retorne o índice do maior valor.
@@ -34,7 +32,6 @@
 //     }
 //     return array.indexOf(maior)
 // }
-
 // console.log(maiorValor([2, 3, 6, 7, 10, 1]))
 
 // function indiceDoMaior(numeros) {
@@ -84,7 +81,6 @@
 //         maiorPalavra = palavras[indice];
 //       }
 //     }
-  
 //     return maiorPalavra;
 //   }
   
@@ -95,8 +91,7 @@
 // function maisRepetido(array){
 //     let contAtual = 0;
 //     let contArmazenado = 0;
-//     let indexArmazenado = 0;
-    
+//     let indexArmazenado = 0;    
 //     for(let index in array){
 //         for(let index2 in array){
 //             if (array[index] === array[index2])
@@ -107,8 +102,7 @@
 //             indexArmazenado = index;
 //         }
 //         contAtual = 0;
-//     }
-    
+//     } 
 //     return array[indexArmazenado]
 // }
 
