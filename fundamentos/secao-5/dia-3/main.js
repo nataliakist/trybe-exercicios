@@ -11,25 +11,46 @@ const myWebpage = document.getElementById('my-spotrybefy');
 // - Crie uma função que adicione a classe 'tech' ao elemento `li` quando for clicado.
 //  - Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
 
-const changeTech = (evento) => {
-    // const techElement = document.querySelector('.tech')
-    evento.target.classList.add('tech')
 
+
+const changeClass = (event) => {
+  const techElement = document.querySelector('.tech');
+  techElement.classList.remove('tech');
+  event.target.classList.add('tech')
+  input.value = '';
 }
 
-firstLi.addEventListener('click', changeTech)
-secondLi.addEventListener('click', changeTech)
-thirdLi.addEventListener('click', changeTech)
+firstLi.addEventListener('click', changeClass)
+secondLi.addEventListener('click', changeClass)
+thirdLi.addEventListener('click', changeClass)
 
 // - Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
 // com a classe 'tech';
 
+input.addEventListener('input', (event) => {
+  const techElement = document.querySelector('.tech');
+  techElement.innerText = event.target.value;
+});
+
 // - Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
 // redirecione para alguma página;
+
+myWebpage.addEventListener('dblclick', () => {
+  window.location.replace('https://nataliakist.github.io/')
+})
+
 //  - Que tal redirecionar para seu portfólio?
 
 // - Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 // a cor do mesmo;
+
+myWebpage.addEventListener('mouseover', (event) => {
+  myWebpage.style.color = 'blue';
+})
+
+myWebpage.addEventListener('mouseout', (event) => {
+  myWebpage.style.color = 'unset';
+})
 
 // Segue abaixo um exemplo do uso de event.target:
 

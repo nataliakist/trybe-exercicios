@@ -1,0 +1,17 @@
+*{
+    font-size: 18px;
+}
+
+.display-1 {
+    font-size: 50px;
+    margin: 15px
+}
+
+.form-check-label {
+    margin-bottom: 15px;
+    margin-right: 30px;
+}
+
+.btn {
+    margin-top: 15px;
+}
