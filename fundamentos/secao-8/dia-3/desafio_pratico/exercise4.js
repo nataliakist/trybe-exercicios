@@ -67,8 +67,16 @@ const countries = [
   }
 ];
 
-const expectedResult = 120797034;
+const names = [
+  'Aanemarie', 'Adervandes', 'Akifusa',
+  'Abegildo', 'Adicellia', 'Aladonata',
+  'Abeladerco', 'Adieidy', 'Alarucha',
+];
 
-const getPopulation = () => countries.reduce((acc, curr) => acc + curr.population, 0);
+const expectedResult = 20;
 
-console.log(getPopulation());
+const array = names.join('').toLowerCase().split('');
+
+const countA = () => array.reduce((acc,letter) => letter === 'a' ? acc += 1 : acc, 0);
+
+console.log(countA());

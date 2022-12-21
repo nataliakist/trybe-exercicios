@@ -67,8 +67,7 @@ const countries = [
   }
 ];
 
-const expectedResult = 120797034;
+const longestName = () => countries.reduce((acc, curr) => {
+    return acc.name.length > curr.name.length ? acc : curr});
 
-const getPopulation = () => countries.reduce((acc, curr) => acc + curr.population, 0);
-
-console.log(getPopulation());
+console.log(longestName())
