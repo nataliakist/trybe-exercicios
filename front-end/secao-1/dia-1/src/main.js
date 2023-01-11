@@ -1,17 +1,18 @@
-import { nanoid } from 'nanoid';
-import copy from 'clipboard-copy';
+import validator from 'validator';
 
-import './style.css';
+const button = document.querySelector('#button');
+const texto = document.querySelector('#value');
+const seletor = document.querySelector('#option');
+const result = document.querySelector('#answer');
 
-const passwordBtnEl = document.querySelector('button');
-const displayPasswordEl = document.querySelector('h2');
-
-passwordBtnEl.addEventListener('click', (event) => {
-  const randomPassword = nanoid();
-  displayPasswordEl.innerHTML = randomPassword;
-});
-
-displayPasswordEl.addEventListener('click', (event) => {
-  copy(event.target.innerHTML);
-  alert('Senha copiada!');
+button.addEventListener('click', (event) => {
+    event.preventDefault();
+    const verificadores = {
+        cpf: validator.isTaxID(texto.value, 'pt-BR'),
+        email: validator.isEmail(texto.value),
+        data: validator.isDate(texto.value),
+        celular: validator.isMobilePhone(texto.value, 'pt-BR'),
+        URL: validator.isURL(texto.value),
+    };
+    result.innerHTML = `A validação retornou ${verificadores[seletor.value]}`;
 });
