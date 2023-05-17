@@ -5,10 +5,10 @@ const SIMPSONS_DATA_PATH = '../../data/simpsons.json';
 
 async function readData() {
   try {
-    const data = await fs.readFile(path.resolve(__dirname, SIMPSONS_DATA_PATH));
+    const data = await fs.readFile(path.resolve(__dirname, SIMPSONS_DATA_PATH), 'utf-8');
     const infos = JSON.parse(data)
-    const result = infos.map(({ id, name }) => `${id} - ${name}`)
-    result.forEach(element => console.log(element))
+    // const result = infos.map(({ id, name }) => `${id} - ${name}`)
+    // result.forEach(element => console.log(element))
     return infos;
   } catch (e) {
     console.error(`Erro: ${e.message}`)
@@ -27,7 +27,17 @@ async function writeNewData(newData) {
   }
 }
 
+async function searchCharacter(characterId) {
+  const data = await readData();
+  const character = data.find((character) => Number(character.id) === characterId)
+  if (!character) {
+    throw new Error('id não encontrado')
+  }
+  return character;
+}
+
 module.exports = {
   readData,
   writeNewData,
+  searchCharacter,
 };
