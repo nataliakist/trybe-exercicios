@@ -1,8 +1,10 @@
-const { readData } = require('./utils/fsUtils');
+const { readData, writeNewData } = require('./utils/fsUtils');
+const readline = require('readline-sync')
 
 async function main() {
-  const infos = await readData();
-  console.log(infos);
+  await readData();
+  const name = readline.question('What\'s the character name? ')
+  writeNewData({ name });
 }
 
 main()
