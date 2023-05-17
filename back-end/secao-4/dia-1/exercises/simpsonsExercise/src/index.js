@@ -1,5 +1,12 @@
-const { readData, writeNewData, searchCharacter, deleteCharacter, writeNewFile } = require('./utils/fsUtils');
-const readline = require('readline-sync')
+const readline = require('readline-sync');
+const {
+  readData,
+  writeNewData,
+  searchCharacter,
+  deleteCharacter,
+  writeNewFile,
+  changeCharacter,
+} = require('./utils/fsUtils');
 
 async function main() {
   // await readData();
@@ -10,7 +17,8 @@ async function main() {
   // console.log(result);
   // await deleteCharacter();
   // await writeNewFile();
-  await writeNewData();
+  // await writeNewData();
+  await changeCharacter();
 }
 
-main()
+main();
