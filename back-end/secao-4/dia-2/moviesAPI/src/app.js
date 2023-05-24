@@ -68,4 +68,17 @@ app.put('/movies/:id', async (req, res) => {
   }
 })
 
+app.delete('/movies/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const movies = await readFile();
+    const newMovies = movies.filter((element) => element.id !== Number(id));
+    const updatedMovies = JSON.stringify(newMovies, null, 2);
+    await fs.writeFile(moviesPath, updatedMovies);
+    res.status(204).end();
+  } catch (err) {
+    res.status(500).send({ message: err.message })
+  }
+})
+
 module.exports = app;
