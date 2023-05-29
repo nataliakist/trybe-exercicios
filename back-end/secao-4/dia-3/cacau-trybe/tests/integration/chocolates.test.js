@@ -20,7 +20,7 @@ describe('Testando a API Cacau Trybe', function () {
     afterEach(function () {
       sinon.restore();
     });
-    it('/GET /chocolates deve retornar status 200 e devolver toda lista de chocolates', async function () {
+    it('retorna status 200 e devolve toda lista de chocolates quando resolvido', async function () {
       sinon.stub(fs, 'readFile').resolves(JSON.stringify(mockCacauFile));
 
       const response = await chai.request(app)
@@ -29,7 +29,7 @@ describe('Testando a API Cacau Trybe', function () {
       expect(response.status).to.be.equal(200);
       expect(response.body).to.deep.equal(mockChocolates);
     });
-    it('Deve retornar mensagem de Erro e status 500', async function () {
+    it('retorna mensagem de Erro e status 500 quando rejeitado', async function () {
       sinon.stub(fs, 'readFile').rejects();
       const response = await chai.request(app)
         .get('/chocolates');
