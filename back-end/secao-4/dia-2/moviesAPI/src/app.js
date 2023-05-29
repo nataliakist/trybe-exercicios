@@ -18,6 +18,20 @@ async function readFile() {
   }
 }
 
+app.get('/movies/search', async (req, res) => {
+  const { q } = req.query;
+  try {
+    const movies = await readFile();
+    if (q) {
+      const filteredMovies = movies.filter((element) => element.movie.includes(q));
+      res.status(200).json(filteredMovies);
+    }
+    res.status(200).end();
+  } catch (error) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 app.get('/movies', async (req, res) => {
   try {
     const movies = await readFile();
@@ -25,7 +39,7 @@ app.get('/movies', async (req, res) => {
   } catch (err) {
     res.status(500).json({ message: err.message })
   }
-})
+});
 
 app.get('/movies/:id', async (req, res) => {
   const { id } = req.params;
@@ -34,9 +48,9 @@ app.get('/movies/:id', async (req, res) => {
     const movie = movies.find((element) => element.id === Number(id));
     res.status(200).json({ movie });
   } catch (err) {
-    res.status(500).json({ message: err.message })
+    res.status(500).json({ message: err.message });
   }
-})
+});
 
 app.post('/movies', async (req, res) => {
   try {
@@ -48,7 +62,7 @@ app.post('/movies', async (req, res) => {
   } catch (err) {
     res.status(500).send({ message: err.message })
   }
-})
+});
 
 app.put('/movies/:id', async (req, res) => {
   const { id } = req.params;
@@ -66,7 +80,7 @@ app.put('/movies/:id', async (req, res) => {
   } catch (err) {
     res.status(500).send({ message: err.message })
   }
-})
+});
 
 app.delete('/movies/:id', async (req, res) => {
   const { id } = req.params;
@@ -79,6 +93,6 @@ app.delete('/movies/:id', async (req, res) => {
   } catch (err) {
     res.status(500).send({ message: err.message })
   }
-})
+});
 
 module.exports = app;
