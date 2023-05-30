@@ -48,6 +48,20 @@ const createChocolate = async (name, brandId) => {
   return newChocolate;
 };
 
+const updateChocolate = async (id, name, brandId) => {
+  const cacauTrybe = await readCacauTrybeFile();
+  const chocolateToUpdate = await getChocolateById(id);
+  if (!chocolateToUpdate) return false;
+  cacauTrybe.chocolates = cacauTrybe.chocolates.map((chocolate) => {
+    if (chocolate.id === id) {
+      return { ...chocolate, name, brandId }
+    }
+    return chocolate;
+  })
+  await writeCacauTrybeFile(cacauTrybe);
+  return { ...chocolateToUpdate, name, brandId }
+}
+
 const deleteChocolate = async (id) => {
   const cacauTrybe = await readCacauTrybeFile();
   const chocolateExists = cacauTrybe.chocolates.some(
@@ -74,5 +88,6 @@ module.exports = {
   readCacauTrybeFile,
   writeCacauTrybeFile,
   createChocolate,
+  updateChocolate,
   deleteChocolate,
 };
