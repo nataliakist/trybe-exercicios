@@ -2,7 +2,16 @@ const book = require('../models/book');
 const bookService = require('../services/bookService');
 
 const getAll = async (req, res) => {
-  const books = await bookService.getAll();
+  const { author } = req.query;
+
+  let books;
+
+  if (!author) {
+    books = await bookService.getAll();
+  } else {
+    books = await bookService.getByAuthor(author);
+  }
+  
   return res.status(200).json(books);
 };
 
