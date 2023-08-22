@@ -63,6 +63,6 @@ export default class Pedido {
 
   totalFinal() {
     const totalParcial = this.totalParcial();
-    return totalParcial * this.desconto;
+    return totalParcial - totalParcial * this.desconto;
   }
 }

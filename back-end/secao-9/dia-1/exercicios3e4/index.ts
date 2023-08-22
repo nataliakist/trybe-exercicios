@@ -4,8 +4,6 @@ import Pedido from "./Pedido";
 
 const cliente1 = new Cliente('Natália');
 
-const pedido0 = new Pedido(cliente1, [], 'dinheiro', 0)
-
 const batata = new Item('Batata Frita', 15.00)
 const suco = new Item('Suco de Laranja', 5.00)
 const sobremesa = new Item('Brownie com Sorvete', 12.00)
