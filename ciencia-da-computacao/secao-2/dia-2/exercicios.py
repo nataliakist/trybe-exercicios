@@ -21,4 +21,9 @@ def max_number(list):
   length = len(list)
   return max_number_aux(list, length)
 
-print(max_number([1, 21, 300, 4, 57]))
+def mdc(a, b):
+  if b == 0:
+    return a
+  return mdc(b, a % b)
+
+print(mdc(45,25))
