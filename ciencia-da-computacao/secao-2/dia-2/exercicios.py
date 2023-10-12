@@ -7,4 +7,18 @@ def even_number_counter(n):
     return even_number_counter(n-1)
   
 
-print(even_number_counter(10))
+def max_number_aux(list, length):
+  if length == 1:
+    return list[0]
+  else:
+    maior_da_lista = max_number_aux(list, length-1)
+    if maior_da_lista > list[length - 1]:
+      return maior_da_lista
+    else:
+      return list[length - 1]
+
+def max_number(list):
+  length = len(list)
+  return max_number_aux(list, length)
+
+print(max_number([1, 21, 300, 4, 57]))
