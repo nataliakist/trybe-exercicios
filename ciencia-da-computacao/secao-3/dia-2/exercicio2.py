@@ -18,6 +18,17 @@ def shuffle(items):
         answer.extend(items[offset::div_cards_by_two])
     return answer
 
+
+def another_suffle(cards):
+  result = []
+  mid = len(cards) // 2
+  first_half = cards[:mid]
+  second_half = cards[mid:]
+  for z in zip(first_half, second_half):
+     result.extend(z) 
+  return result
+
+
 # cartas = [2, 6, 4, 5]
 # resultado = [2, 4, 6, 5]
 
@@ -25,4 +36,4 @@ def shuffle(items):
 cartas = [1, 4, 4, 7, 6, 6]
 # resultado = [1, 7, 4, 6, 4, 6]
 
-print(shuffle(cartas))
+print(another_suffle(cartas))
