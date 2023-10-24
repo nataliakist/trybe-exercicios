@@ -89,12 +89,23 @@ class LinkedList:
                 position -= 1
         return value_to_be_returned
     
+    def index_of(self, value):
+        index = -1
+        value_to_be_compared = self.head_value
+        while value_to_be_compared:
+            index += 1
+            if value_to_be_compared.value == value:
+                return index
+            value_to_be_compared = value_to_be_compared.next
+        return -1
+        
+    
     def is_empty(self):
         return not self.__length
     
     def clear(self):
-        self.head_value = None
-        self.__length = 0
+        while not self.is_empty():
+            self.remove_first()
 
 
 if __name__ == "__main__":
@@ -126,4 +137,9 @@ if __name__ == "__main__":
     linked_list.insert_at(7, 2)
     linked_list.insert_at(8, 3)
     linked_list.insert_at(9, 4)
+    linked_list.insert_at(8, 1)
     print(linked_list.get_element_at(3)) # saída: Node(value=8 next=None)
+
+    print(linked_list.index_of(10)) # saída: -1
+
+    print(linked_list)
