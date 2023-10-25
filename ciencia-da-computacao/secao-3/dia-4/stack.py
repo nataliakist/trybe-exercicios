@@ -40,7 +40,11 @@ class Stack():
     def min_value(self):
         if self.is_empty():
             return None
-        return min(self._data)
+        for element in self._data:
+            min_value = element
+            if element < min_value:
+                min_value = element
+        return min_value
     
 
 if __name__ == "__main__":
@@ -53,4 +57,6 @@ if __name__ == "__main__":
   print(stack)
   stack.push(-2)
   print(stack)
+  print(stack.min_value())
+  stack.push(-5)
   print(stack.min_value())
