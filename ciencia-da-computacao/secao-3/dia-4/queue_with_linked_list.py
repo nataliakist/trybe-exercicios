@@ -1,9 +1,9 @@
-from linked_list_content import LinkedListContent
-from node import Node
+from linked_list_content import LinkedList
+
 
 class Queue():
     def __init__(self):
-        self._data = LinkedListContent()
+        self._data = LinkedList()
 
     def enqueue(self, value):
         self._data.insert_last(value)
