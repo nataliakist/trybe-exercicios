@@ -36,3 +36,21 @@ class Stack():
                 str_items += ", "
 
         return "Stack(" + str_items + ")"
+    
+    def min_value(self):
+        if self.is_empty():
+            return None
+        return min(self._data)
+    
+
+if __name__ == "__main__":
+  stack = Stack()
+  stack.push(1)
+  stack.push(2)
+  print(stack)
+  print(stack.peek())
+  stack.push(3)
+  print(stack)
+  stack.push(-2)
+  print(stack)
+  print(stack.min_value())
