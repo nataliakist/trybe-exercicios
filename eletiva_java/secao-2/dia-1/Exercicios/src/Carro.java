@@ -5,6 +5,7 @@ public class Carro {
   private String marca;
   private String modelo;
   private int ano;
+  private static int contador = 0;
 
   /**
    * Instantiates a new Carro.
@@ -17,10 +18,15 @@ public class Carro {
     this.marca = marca;
     this.modelo = modelo;
     this.ano = ano;
+    Carro.contador++;
   }
 
   public void exibirInformacoes() {
     System.out.println("Marca: " + marca + ", Modelo: " + modelo + ", Ano: " + ano);
+  }
+
+  public static int quantidadeCarros() {
+    return Carro.contador;
   }
 
   public String getMarca() {
